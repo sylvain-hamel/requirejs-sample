@@ -1,5 +1,5 @@
 /*
-Step 4 - define the module1 module with a dependency on module2
+Step 4 - Define the module1 module with a dependency on module2
 */    	
 
 define(['module2'], function(module2){

@@ -1,8 +1,6 @@
 /*
-Step 6 - define the module2
+Step 6 - Define the module2
 */    	
-
-
 define(function(){
 	var Woo = function(){
 		this.method1 = function(){

@@ -1,5 +1,5 @@
 /*
-This is just a plais javascript file that create a namespace variable named nm1.
+This is just a plain javascript file that creates a namespace named nm1 with two classes.
 */ 
 
 var Moo = function(){
