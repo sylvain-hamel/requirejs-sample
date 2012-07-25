@@ -1,5 +1,5 @@
 /*
-Step 8 - Define the module2
+Step 10 - Define the module3
 */    	
 define(function(){
 	var Woo = function(){
@@ -16,7 +16,7 @@ define(function(){
 
 
 	/*
-	Step 9 - export the two types
+	Step 11 - export the two types
 	*/  	
 	return {
 		Woo : Woo,

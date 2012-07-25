@@ -3,7 +3,12 @@
 	<title>RequireJS</title>
 
 	<!-- 
-	Step 1 - Load require.js and make it run main.js 
+	Step 1 - Load require.js configuration, this is done as early as possible.
+	-->
+	<script src="scripts/require-config.js"></script>
+
+	<!-- 
+	Step 5 - Load require.js and make it run main.js 
 	-->
 	<script src="scripts/require.js" data-main="scripts/main"></script>
 </head>

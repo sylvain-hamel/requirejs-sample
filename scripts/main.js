@@ -1,37 +1,15 @@
+require.onError = function (err) {
+	alert("RequireJS error: Cannot load module '" + err.requireModules + "'");
+}
 
+window.onerror = function (errorMsg, url, lineNumber) {
+	alert("Javascript error: " + errorMsg + "\r\nsource: " + url + "\r\nline: " +  lineNumber);
+}
 
 /*
-Step 2 - Configure RequireJS before using it
+Step 12 - Ask RequireJS for jquery, module1, module2 and nomodule1 and use them
 */
-require.config({
-
-	/*
-	Step 3 - Map the 'jquery' identifier to the jquery URL.
-
-	- This is mandatory for jquery because jquery defines() itself with this hardcoded itentifier.
-	- Setting paths is also useful if you what to shield modules from other modules' location. 
-	*/
-    paths: {
-        'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min'
-    },
-
-	/*
-	Step 4 - Since nomodule1.js is not a AMD module (it does not call define), we must tell
-	         RequireJS what to do if a module asks for this module. Here we tell RequireJS to
-	         use the nm1 global variable created by nomodule1.js as its export.
-	*/    
-    shim:{
-    	'nomodule1' : {
-    		exports: 'nm1'
-		}
-    }
-});
-
-
-/*
-Step 8 - Ask RequireJS for jquery, module1, module2 and nomodule1 and use them
-*/    
-require(['jquery', 'module1', 'module2', 'nomodule1'], function (jq, m1, m2, nm1) {
+require(['jquery', 'module1', 'module2', 'nomodule1', '../otherscripts/module3'], function (jq, m1, m2, nm1, m3) {
 
 	console.log('main:require:completed'); console.log('main:jq object is ' + jq);
 

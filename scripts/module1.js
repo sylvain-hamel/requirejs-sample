@@ -1,7 +1,6 @@
 /*
-Step 4 - Define the module1 module with a dependency on module2
+Step 6 - Define the module1 module with a dependency on module2
 */    	
-
 define(['module2'], function(module2){
 	var Foo = function(){
 		this.method1 = function(){
@@ -17,7 +16,7 @@ define(['module2'], function(module2){
 
 
 	/*
-	Step 5 - export the two types
+	Step 7 - export the two types
 	*/  	
 	return {
 		Foo : Foo,
