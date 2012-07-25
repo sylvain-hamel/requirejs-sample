@@ -3,14 +3,32 @@
 	<title>RequireJS</title>
 
 	<!-- 
-	Step 1 - Load require.js configuration, this is done as early as possible.
+	Step 1 - Load require.js configuration, this is done as early as possible. See "Step 1.1"
+	below for details...
 	-->
 	<script src="scripts/require-config.js"></script>
+	
 
 	<!-- 
 	Step 5 - Load require.js and make it run main.js 
 	-->
 	<script src="scripts/require.js" data-main="scripts/main"></script>
+
+
+	<!-- 
+	Step 1.1. Calling require() this way wouldn't work if the requirejs configuration was 
+	loaded in 'main.js' instead of 'require-config.js'. If we did that, this script below would be 
+	executed before 'main.js' and thefore, the path for 'jquery' would not be loaded yet.
+	-->
+	<script type="text/javascript">
+		require(['jquery'], function ($) {
+			if ($ === undefined)
+			{
+				alert("broken!");
+			}
+		})
+	</script>
+
 </head>
 
 <body>
